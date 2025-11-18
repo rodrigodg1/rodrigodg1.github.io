@@ -1,4 +1,4 @@
- body {
+        body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
@@ -42,11 +42,15 @@
 
         .sidebar-links li {
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
         }
 
         .sidebar-links i {
-            width: 20px;
+            width: 25px; /* Fixed width for alignment */
             color: #555;
+            text-align: center;
+            margin-right: 8px;
         }
 
         /* Main Content Styles */
@@ -103,15 +107,22 @@
         /* Award Highlight Style */
         .award-highlight {
             display: block;
-            margin-top: 5px;
+            margin-top: 6px;
             color: #d35400; 
             font-weight: bold;
             font-size: 0.95em;
+            display: flex;
+            align-items: center;
         }
         
-        .award-icon {
-            color: #f39c12;
-            margin-right: 5px;
+        /* SVG Star Styling */
+        .star-icon {
+            width: 16px;
+            height: 16px;
+            fill: #f39c12; /* Gold/Orange color */
+            margin-right: 6px;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         @media (max-width: 768px) {
@@ -124,5 +135,8 @@
             }
             .profile-img {
                 margin: 0 auto 20px;
+            }
+            .sidebar-links li {
+                justify-content: center;
             }
         }
