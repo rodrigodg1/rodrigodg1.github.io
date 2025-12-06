@@ -1,142 +1,166 @@
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-        /* Sidebar Styles */
-        aside {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-        }
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
 
-        .profile-img {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 50%;
-            display: block;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        .sidebar-links {
-            list-style: none;
-            padding: 0;
-        }
+/* Sidebar Styles */
+aside {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
 
-        .sidebar-links li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
+.profile-img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        .sidebar-links i {
-            width: 25px; /* Fixed width for alignment */
-            color: #555;
-            text-align: center;
-            margin-right: 8px;
-        }
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
 
-        /* Main Content Styles */
-        main {
-            flex: 2;
-            min-width: 300px;
-        }
+.sidebar-links li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
 
-        h1 {
-            margin-top: 0;
-            font-size: 2.2em;
-        }
+.sidebar-links i {
+    width: 25px; /* Fixed width for alignment */
+    color: #555;
+    text-align: center;
+    margin-right: 8px;
+}
 
-        h4 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* Main Content Styles */
+main {
+    flex: 2;
+    min-width: 300px;
+}
 
-        .publication-list, .conference-list, .education-list {
-            list-style: none;
-            padding: 0;
-        }
+h1 {
+    margin-top: 0;
+    font-size: 2.2em;
+}
 
-        .publication-list li, .conference-list li, .education-list li {
-            margin-bottom: 20px;
-        }
+h4 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .year-badge {
-            font-weight: bold;
-            background-color: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            margin-right: 8px;
-        }
+.publication-list, .conference-list, .education-list {
+    list-style: none;
+    padding: 0;
+}
 
-        .venue {
-            font-style: italic;
-            color: #555;
-            display: block;
-            margin-top: 4px;
-        }
+/* General list spacing for non-publication lists */
+.conference-list li, .education-list li {
+    margin-bottom: 20px;
+}
 
-        .doi {
-            font-size: 0.9em;
-            color: #777;
-        }
+/* Specific styling for Publication List (Discrete Horizontal Line) */
+.publication-list li {
+    border-bottom: 1px solid #eaeaea; /* Discrete gray line */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
 
-        /* Award Highlight Style */
-        .award-highlight {
-            display: block;
-            margin-top: 6px;
-            color: #d35400; 
-            font-weight: bold;
-            font-size: 0.95em;
-            display: flex;
-            align-items: center;
-        }
-        
-        /* SVG Star Styling */
-        .star-icon {
-            width: 16px;
-            height: 16px;
-            fill: #f39c12; /* Gold/Orange color */
-            margin-right: 6px;
-            display: inline-block;
-            vertical-align: middle;
-        }
+/* Remove the line from the very last publication */
+.publication-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
 
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            aside {
-                max-width: 100%;
-                text-align: center;
-            }
-            .profile-img {
-                margin: 0 auto 20px;
-            }
-            .sidebar-links li {
-                justify-content: center;
-            }
-        }
+.year-badge {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+/* Added Author Styling */
+.authors {
+    display: block;
+    font-size: 0.95em;
+    color: #444; /* Slightly darker than venue for readability */
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.venue {
+    font-style: italic;
+    color: #555;
+    display: block;
+    margin-top: 2px;
+}
+
+.doi {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Award Highlight Style */
+.award-highlight {
+    display: block;
+    margin-top: 6px;
+    color: #d35400; 
+    font-weight: bold;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+/* SVG Star Styling */
+.star-icon {
+    width: 16px;
+    height: 16px;
+    fill: #f39c12; /* Gold/Orange color */
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    aside {
+        max-width: 100%;
+        text-align: center;
+    }
+    .profile-img {
+        margin: 0 auto 20px;
+    }
+    .sidebar-links li {
+        justify-content: center;
+    }
+}
