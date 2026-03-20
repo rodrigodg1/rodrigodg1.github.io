@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Rodrigo Dutra Garcia - Researcher in privacy-preserving protocols, verifiable computation, and blockchain systems.">
+    <title>Rodrigo Dutra Garcia</title>
+    <!-- Restore elegant fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (() => {
+            const storageKey = "theme-preference";
+            try {
+                const storedTheme = localStorage.getItem(storageKey);
+                const preferredTheme = storedTheme === "light" || storedTheme === "dark"
+                    ? storedTheme
+                    : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                document.documentElement.dataset.theme = preferredTheme;
+            } catch (error) {
+                document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="profile-header">
+            <img src="imgs/rodrigo.jpg" alt="Rodrigo Dutra Garcia" class="avatar" loading="lazy">
+            <div class="profile-info">
+                <div class="profile-title-row">
+                    <h1>Rodrigo Dutra Garcia</h1>
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+                        aria-label="Toggle theme" title="Toggle theme">
+                        <i class="fa-solid fa-moon" data-theme-icon aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="bio">I research privacy-preserving protocols, verifiable computation, and blockchain systems.
+                </p>
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=GKfjnS4AAAAJ&amp;hl=en"
+                        aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://github.com/rodrigodg1" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://orcid.org/0000-0003-3607-9315" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://linkedin.com/in/rodrigodutragarcia" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@garciarodrigo" aria-label="YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="mailto:rgarcia@usp.br" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-container">
+
+            <!-- Current -->
+            <section class="content-section">
+                <div class="section-category section-category--current">
+                    <h2>Current</h2>
+                </div>
+                <div class="section-content">
+                    <ul class="styled-list">
+                        <li>
+                            <span class="list-body"><strong>Ph.D. Candidate</strong> at <a href="https://www.icmc.usp.br" target="_blank" rel="noopener noreferrer">ICMC-USP</a></span>
+                        </li>
+                        <li class="branch-item">
+                            <span class="list-body"><strong>Research Period</strong> at <a href="https://viterbischool.usc.edu" target="_blank" rel="noopener noreferrer">USC Viterbi School of
+                                Engineering</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Publications -->
+            <section class="content-section">
+                <div class="section-category">
+                    <h2>Recent Publications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="item-list publication-list">
+                        <div class="list-item">
+                            <div class="item-title"><a href="https://doi.org/10.1016/j.comnet.2025.111899">A Survey of
+                                    Privacy-Preserving Mechanisms on Quality of Experience in Next-Generation
+                                    Networks</a></div>
+                            <div class="item-authors">Rodrigo D. Garcia, Gowri Ramachandran, Christian Esteve
+                                Rothenberg, Bhaskar Krishnamachari, Jó Ueyama</div>
+                            <div class="item-venue">Computer Networks. 2025. DOI: 10.1016/j.comnet.2025.111899</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-title"><a href="https://doi.org/10.1145/3772072">Towards a Decentralized
+                                    and Privacy-Preserving Quality of Experience System for 6G Networks</a></div>
+                            <div class="item-authors">Rodrigo D. Garcia, Gowri Ramachandran, Christian Esteve
+                                Rothenberg, Daniel Macêdo Batista, Jó Ueyama</div>
+                            <div class="item-venue">Distributed Ledger Technologies: Research and Practice. 2025. DOI:
+                                10.1145/3772072</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-title"><a href="https://doi.org/10.1007/s42979-025-04244-2">Towards an
+                                    Automated and Auditable Industrial Safety Inspection Using Robots and Blockchain</a>
+                            </div>
+                            <div class="item-authors">Rodrigo D. Garcia, Miguel Bragante Henriques, André Luiz Maciel
+                                Cid, Gilmar Pereira da Cruz Júnior, Héctor Azpúrua, Gowri Ramachandran, Maíra Saboia,
+                                Gustavo M. Freitas, Gustavo Pessin, Jó Ueyama</div>
+                            <div class="item-venue">SN Computer Science. 2025. DOI: 10.1007/s42979-025-04244-2</div>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-title"><a
+                                    href="https://doi.org/10.1080/00207543.2025.2514727">Inter-organisational
+                                    collaboration through blockchain governance and smart contracts: a design science
+                                    research approach</a></div>
+                            <div class="item-authors">Lívia Maria Bettini de Miranda, Rodrigo D. Garcia, Gowri Sankar
+                                Ramachandran, Jó Ueyama, Fábio Müller Guerrini</div>
+                            <div class="item-venue">International Journal of Production Research. 2025. DOI:
+                                10.1080/00207543.2025.2514727</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a class="more-link" href="https://scholar.google.com/citations?user=GKfjnS4AAAAJ&amp;hl=en">See
+                            more publications on Google Scholar &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Activity -->
+            <section class="content-section">
+                <div class="section-category">
+                    <h2>Code Activity</h2>
+                </div>
+                <div class="section-content">
+                    <div class="code-activity-header">
+                        <strong>GitHub:</strong> <a href="https://github.com/rodrigodg1">rodrigodg1</a>
+                    </div>
+                    <div class="github-activity-wrap" id="gh-activity">
+                        <a href="https://github.com/rodrigodg1">
+                            <img id="gh-chart-light" class="gh-chart" src="https://ghchart.rshah.org/0b7a75/rodrigodg1"
+                                alt="GitHub contribution chart for Rodrigo Garcia (Light)">
+                            <img id="gh-chart-dark" class="gh-chart" src="https://ghchart.rshah.org/5ad0c1/rodrigodg1"
+                                alt="GitHub contribution chart for Rodrigo Garcia (Dark)">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Participations -->
+            <section class="content-section">
+                <div class="section-category">
+                    <h2>Participations</h2>
+                </div>
+                <div class="section-content">
+                    <h3 class="section-head" style="margin-top: 0;">Committees</h3>
+                    <ul class="styled-list">
+                        <li>
+                            <span class="item-label text-badge">ICBC 2026</span>
+                            <span class="list-body">Publicity Chair on the Organizing Committee for the <a
+                                    href="https://icbc2026.ieee-icbc.org/committees">IEEE International Conference on
+                                    Blockchain and Cryptocurrency</a></span>
+                        </li>
+                    </ul>
+
+                    <h3 class="section-head">Honors and Awards</h3>
+                    <ul class="styled-list">
+                        <li>
+                            <span class="item-label text-badge">2024</span>
+                            <span class="list-body">Awarded Honorable Mention for Master's Dissertation for <a
+                                    href="https://sol.sbc.org.br/index.php/sbrc_estendido/article/view/29968">Blockchain-based
+                                    data governance for privacy-preserving in multi-stakeholder settings</a> at
+                                SBRC</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Academic Path -->
+            <section class="content-section">
+                <div class="section-category">
+                    <h2>Academic Path</h2>
+                </div>
+                <div class="section-content">
+                    <div class="academic-timeline">
+                        <!-- PhD Block -->
+                        <div class="academic-block">
+                            <div class="academic-years">
+                                <span class="year-top">Current</span>
+                                <span class="year-bottom">2023</span>
+                            </div>
+                            <div class="academic-line"></div>
+                            <div class="academic-details">
+                                <span class="list-body" style="margin-bottom: 8px;"><strong>Ph.D. Candidate</strong> at <a href="https://www.icmc.usp.br" target="_blank" rel="noopener noreferrer">ICMC-USP</a></span>
+                                <div class="branch-item" style="display: flex; gap: 12px; align-items: baseline; margin-top: 2px;">
+                                    <span class="item-year text-badge" style="font-size: 0.75rem; padding: 2px 6px; min-width: auto;">2025 - 2026</span>
+                                    <span class="list-body"><strong>Research Period</strong> at <a href="https://viterbischool.usc.edu" target="_blank" rel="noopener noreferrer">USC Viterbi School of Engineering</a></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MSc Block -->
+                        <div class="academic-block">
+                            <div class="academic-years">
+                                <span class="year-top">2023</span>
+                                <span class="year-bottom">2020</span>
+                            </div>
+                            <div class="academic-line"></div>
+                            <div class="academic-details">
+                                <span class="list-body"><strong>M.Sc.</strong> from the Institute of Mathematics and Computer Sciences (ICMC), University of São Paulo (USP), Brazil</span>
+                            </div>
+                        </div>
+
+                        <!-- BSc Block -->
+                        <div class="academic-block">
+                            <div class="academic-years">
+                                <span class="year-top">2019</span>
+                                <span class="year-bottom">2014</span>
+                            </div>
+                            <div class="academic-line"></div>
+                            <div class="academic-details">
+                                <span class="list-body"><strong>B.Sc. in Computer Engineering</strong> from Dom Bosco Catholic University (UCDB), Brazil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        (() => {
+            const storageKey = "theme-preference";
+            const root = document.documentElement;
+            const toggleButton = document.querySelector("[data-theme-toggle]");
+            const themeIcon = document.querySelector("[data-theme-icon]");
+
+            function updateToggle(theme) {
+                const isDark = theme === "dark";
+                toggleButton.setAttribute("aria-pressed", String(isDark));
+                themeIcon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+            }
+
+            function applyTheme(theme, persist) {
+                root.dataset.theme = theme;
+                if (persist) {
+                    try {
+                        localStorage.setItem(storageKey, theme);
+                    } catch (error) {
+                    }
+                }
+                updateToggle(theme);
+            }
+
+            toggleButton.addEventListener("click", () => {
+                const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+                applyTheme(nextTheme, true);
+            });
+
+            applyTheme(root.dataset.theme || "light", false);
+        })();
+    </script>
+</body>
+
+</html>

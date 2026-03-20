@@ -1,0 +1,476 @@
+:root {
+    color-scheme: light;
+    --bg-color: #f4efe8; /* Warm creamy beige from user reference */
+    --text-color: #2b3a4a; /* Deep elegant slate for main text */
+    --text-soft: #64748b;
+    --link-color: #0b7a75;
+    --border-color: rgba(16, 32, 44, 0.1);
+    --border-strong: rgba(16, 32, 44, 0.18);
+    --nav-bg: #f0ece3;
+    
+    --font-sans: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-display: "Instrument Serif", Georgia, serif;
+    --radius-md: 12px;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-color: #0d141b;
+    --text-color: #e2e8f0;
+    --text-soft: #94a3b8;
+    --link-color: #5ad0c1;
+    --border-color: rgba(150, 170, 184, 0.15);
+    --border-strong: rgba(150, 170, 184, 0.25);
+    --nav-bg: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 30px 20px;
+    font-size: 14px; /* Elegant reading size */
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-color: rgba(11, 122, 117, 0.3);
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+}
+
+html[data-theme="dark"] a {
+    text-decoration-color: rgba(90, 208, 193, 0.3);
+}
+
+a:hover {
+    text-decoration-color: var(--link-color);
+}
+
+p, ul, ol, h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.avatar {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.profile-title-row h1 {
+    font-family: var(--font-sans);
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--nav-bg);
+    transform: scale(1.05);
+}
+
+.bio {
+    color: var(--text-soft);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* Main Content Sections */
+.content-section {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    left: 160px; /* 140px col + 20px half-gap */
+    top: 15px; /* align slightly below the dot */
+    bottom: -50px; /* span down the margin */
+    width: 1px;
+    background-color: var(--border-strong);
+    z-index: -1;
+}
+
+.content-section:last-child::before {
+    display: none;
+}
+
+.section-category {
+    text-align: right;
+    position: relative;
+    padding-top: 4px; /* match body text height vertically */
+}
+
+.section-category h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: var(--text-color);
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+
+.section-category::after {
+    content: '';
+    position: absolute;
+    right: -24px; /* center 8px point in gap */
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--link-color);
+    box-shadow: 0 0 0 5px var(--bg-color); /* Cutout effect for timeline track */
+}
+
+@keyframes dot-pulse {
+    0%   { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 0 color-mix(in srgb, var(--link-color) 80%, transparent); }
+    60%  { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 14px color-mix(in srgb, var(--link-color) 0%, transparent); }
+    100% { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 0 color-mix(in srgb, var(--link-color) 0%, transparent); }
+}
+
+.section-category--current::after {
+    animation: dot-pulse 1.6s ease-out infinite;
+}
+
+.section-content {
+    min-width: 0;
+}
+
+.section-head {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    margin-top: 30px;
+    color: var(--text-color);
+    letter-spacing: 0.02em;
+}
+
+/* Lists and Items */
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.list-item {
+    padding: 4px 16px;
+    border-radius: var(--radius-md);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    margin-left: -16px; /* Counteract padding to align text visually */
+    margin-right: -16px;
+}
+
+.list-item:hover {
+    background: var(--nav-bg);
+    border-color: var(--border-color);
+}
+
+.item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.item-title a {
+    color: var(--text-color);
+}
+
+.item-authors {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.item-venue {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+}
+
+/* Styling for Badges / Text labels */
+.text-badge {
+    display: inline-block;
+    background-color: var(--nav-bg);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-right: 18px;
+    vertical-align: top;
+    white-space: nowrap;
+    min-width: 95px;
+    text-align: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+ul.styled-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+ul.styled-list li {
+    display: flex;
+    align-items: flex-start;
+}
+
+.list-body {
+    flex: 1;
+    line-height: 1.5;
+}
+
+/* Branch lines for sub-items */
+.branch-item {
+    position: relative;
+    padding-left: 22px;
+    margin-top: -4px; /* Pull slightly closer to parent */
+}
+
+.branch-item::before {
+    content: '';
+    position: absolute;
+    left: 4px; /* Align slightly inwards */
+    top: -10px; /* Start from parent baseline */
+    width: 12px;
+    height: 22px;
+    border-left: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+    border-bottom-left-radius: 6px;
+}
+
+.more-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.more-link:hover {
+    background: var(--nav-bg);
+}
+
+/* Custom Academic Timeline */
+.academic-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Reintroduced gap between blocks to break the graduation lines */
+}
+
+.academic-block {
+    display: flex;
+    align-items: stretch;
+    gap: 16px; /* Space between years, line, and details */
+}
+
+.academic-years {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 60px; /* Ensure "Current" fits perfectly right-aligned */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    padding: 0; /* Remove padding to tie block bounds closely to text size */
+}
+
+.year-top, .year-bottom {
+    display: block;
+}
+
+.academic-line {
+    width: 1px;
+    background-color: var(--border-strong); /* Match site vertical timeline thickness and color */
+    border-radius: 0;
+    margin: 6px 0; /* Drops line by 6px forming a perfect visual vertical alignment with the center of the text! */
+}
+
+.academic-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0; 
+}
+
+/* Code Activity Specifics */
+.code-activity-header {
+    margin-bottom: 12px;
+}
+
+.github-activity-wrap {
+    overflow: hidden;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.gh-chart {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Default block */
+}
+
+/* 
+    Crucial fix for GitHub duplicates!
+    Using exact ID selectors ensures they overpower any conflict. 
+*/
+#gh-chart-light {
+    display: block;
+}
+#gh-chart-dark {
+    display: none;
+}
+
+html[data-theme="dark"] #gh-chart-light {
+    display: none;
+}
+html[data-theme="dark"] #gh-chart-dark {
+    display: block;
+}
+
+@media (max-width: 650px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .profile-info {
+        width: 100%;
+    }
+    .profile-title-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .bio {
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+    }
+    .content-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .content-section::before {
+        display: none;
+    }
+    .section-category {
+        text-align: left;
+    }
+    .section-category::after {
+        display: none;
+    }
+    ul.styled-list li {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .text-badge {
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
+}
