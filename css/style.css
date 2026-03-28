@@ -206,15 +206,7 @@ p, ul, ol, h1, h2, h3, h4 {
     box-shadow: 0 0 0 5px var(--bg-color); /* Cutout effect for timeline track */
 }
 
-@keyframes dot-pulse {
-    0%   { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 0 color-mix(in srgb, var(--link-color) 80%, transparent); }
-    60%  { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 14px color-mix(in srgb, var(--link-color) 0%, transparent); }
-    100% { box-shadow: 0 0 0 5px var(--bg-color), 0 0 0 0 color-mix(in srgb, var(--link-color) 0%, transparent); }
-}
 
-.section-category--current::after {
-    animation: dot-pulse 1.6s ease-out infinite;
-}
 
 .section-content {
     min-width: 0;
