@@ -245,10 +245,10 @@ p, ul, ol, h1, h2, h3, h4 {
 }
 
 .item-title {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 4px;
-    line-height: 1.4;
+    margin-bottom: 2px;
+    line-height: 1.35;
 }
 
 .item-title a {
@@ -257,13 +257,15 @@ p, ul, ol, h1, h2, h3, h4 {
 
 .item-authors {
     color: var(--text-soft);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    line-height: 1.35;
     margin-bottom: 2px;
 }
 
 .item-venue {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     color: var(--text-soft);
+    line-height: 1.3;
 }
 
 /* Styling for Badges / Text labels */
@@ -319,6 +321,20 @@ ul.styled-list li {
     border-left: 1px solid var(--border-strong);
     border-bottom: 1px solid var(--border-strong);
     border-bottom-left-radius: 6px;
+}
+
+.branch-item:not(:last-child)::before {
+    border-bottom-left-radius: 0;
+}
+
+.branch-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    bottom: -12px;
+    width: 1px;
+    background-color: var(--border-strong);
 }
 
 .more-link {
